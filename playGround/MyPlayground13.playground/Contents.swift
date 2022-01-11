@@ -21,7 +21,14 @@ import os
 //    }
 //
 
-struct Lecture {
+// CustomStringConvertible
+// protocol 추가
+
+struct Lecture/*: CustomStringConvertible*/ {
+//    var description: String {
+//        return "Title: \(name), Instructor: \(instructor)"
+//    }
+    
     let name: String
     let instructor: String
     let numOfStudent: Int
@@ -49,3 +56,5 @@ let lec3 = Lecture(name: "ios 'Pro'", instructor: "Jim", numOfStudent: 5)
 let lectures = [lec1, lec2, lec3]
 
 printLectureName(from: "Jim", lectures: lectures)
+
+print(lec1)
