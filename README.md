@@ -33,7 +33,7 @@
 
 ### issues
 
-[**이미지 크기 issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/1#issue-1101945578)
+[**이미지 크기 issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/1#issue-1101945578) </br>
 [**keyValue issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/3#issue-1103370996)
 
 # :memo: Commit Convention
