@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7765D8D527903CE50073E543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8D427903CE50073E543 /* AppDelegate.swift */; };
 		7765D8D727903CE50073E543 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8D627903CE50073E543 /* SceneDelegate.swift */; };
-		7765D8DC27903CE50073E543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7765D8DA27903CE50073E543 /* Main.storyboard */; };
 		7765D8DE27903CE60073E543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7765D8DD27903CE60073E543 /* Assets.xcassets */; };
 		7765D8E127903CE60073E543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7765D8DF27903CE60073E543 /* LaunchScreen.storyboard */; };
-		7765D8E927903DD60073E543 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8E827903DD60073E543 /* BountyViewController.swift */; };
-		7765D8EB279067F40073E543 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8EA279067F40073E543 /* DetailViewController.swift */; };
 		7765D8ED2790A0A00073E543 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8EC2790A0A00073E543 /* BountyInfo.swift */; };
+		7765D8F02790C1860073E543 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8EA279067F40073E543 /* DetailViewController.swift */; };
+		7765D8F42790D6950073E543 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8E827903DD60073E543 /* BountyViewController.swift */; };
+		7765D8F62790DEE50073E543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7765D8DA27903CE50073E543 /* Main.storyboard */; };
+		7765D8F72790E32D0073E543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D8D427903CE50073E543 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,9 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7765D8F62790DEE50073E543 /* Main.storyboard in Resources */,
 				7765D8E127903CE60073E543 /* LaunchScreen.storyboard in Resources */,
 				7765D8DE27903CE60073E543 /* Assets.xcassets in Resources */,
-				7765D8DC27903CE50073E543 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,11 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7765D8F42790D6950073E543 /* BountyViewController.swift in Sources */,
 				7765D8ED2790A0A00073E543 /* BountyInfo.swift in Sources */,
-				7765D8D527903CE50073E543 /* AppDelegate.swift in Sources */,
-				7765D8E927903DD60073E543 /* BountyViewController.swift in Sources */,
+				7765D8F02790C1860073E543 /* DetailViewController.swift in Sources */,
+				7765D8F72790E32D0073E543 /* AppDelegate.swift in Sources */,
 				7765D8D727903CE50073E543 /* SceneDelegate.swift in Sources */,
-				7765D8EB279067F40073E543 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

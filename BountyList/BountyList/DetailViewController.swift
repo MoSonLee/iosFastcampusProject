@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     
     // Model
     // -BountyInfo
-    // > BountyInfo 만들기
+    // > BountyInfo 만들기/Users/leeseunghoo/Desktop/iosFastcampusProject/BountyList/BountyList/DetailViewController.swift
     
     // View
     // - imgView, nameLabel, bountyLabel
@@ -30,11 +30,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
     
-    //    var name: String?
-    //    var bounty: Int?
-    
-    //    var bountyInfo: BountyInfo?
-    
     let viewModel = DetailViewModel()
     
     override func viewDidLoad() {
@@ -50,17 +45,6 @@ class DetailViewController: UIViewController {
             bountyLabel.text = "\(bountyInfo.bounty)"
         }
         
-        //        if let bountyInfo = self.bountyInfo {
-        //            imgView.image = bountyInfo.image
-        //            nameLabel.text = bountyInfo.name
-        //            bountyLabel.text = "\(bountyInfo.bounty)"
-        //        }
-        
-        //        if let name = self.name, let bounty = self.bounty {
-        //            imgView.image = UIImage(named: "\(name).jpg")
-        //            nameLabel.text = name
-        //            bountyLabel.text = "\(bounty)"
-        //        }
     }
     
     @IBAction func close(_ sender: Any) {
