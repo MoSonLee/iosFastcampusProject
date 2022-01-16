@@ -67,8 +67,10 @@
                     </view>
                     <connections>
                         <outlet property="bountyLabel" destination="NDf-sq-nKq" id="YOD-Va-Qs5"/>
+                        <outlet property="bountyLabelCenterX" destination="yf6-un-3UK" id="woG-Cz-vpP"/>
                         <outlet property="imgView" destination="qNH-Zi-nCK" id="sGe-rZ-sTA"/>
                         <outlet property="nameLabel" destination="RDW-hu-eBI" id="HO3-nY-Q7Z"/>
+                        <outlet property="nameLabelCenterX" destination="6o7-7c-3q8" id="R8f-GN-3n7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YqG-lV-3U3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -100,7 +102,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AjV-l8-Eah">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AjV-l8-Eah">
                                                     <rect key="frame" x="20" y="0.0" width="160" height="228.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="AjV-l8-Eah" secondAttribute="height" multiplier="7:10" id="QW8-Vh-o9D"/>
