@@ -23,13 +23,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M30-Wu-jcd">
                                     <size key="itemSize" width="180" height="240"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="414" height="296"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollectionViewCell" id="Gif-Aj-jZz" customClass="TrackCollecionViewCell" customModule="AppleMusicStApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="180" height="240"/>
+                                        <rect key="frame" x="20" y="316" width="180" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LG5-i8-bpe">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
@@ -75,6 +75,71 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Blc-cR-s7f" customClass="TrackCollectionHeaderView" customModule="AppleMusicStApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Pick!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWn-La-Mcd">
+                                            <rect key="frame" x="20" y="30" width="185" height="36"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-He-MdL">
+                                            <rect key="frame" x="43" y="76" width="345" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="RJb-ES-op0"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zf-pM-Zb3">
+                                            <rect key="frame" x="53" y="237" width="75" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-zN-69h">
+                                            <rect key="frame" x="43" y="76" width="345" height="200"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="cardTapped:" destination="Blc-cR-s7f" eventType="touchUpInside" id="ALg-uR-MRb"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY NOW Today's pick" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-KQ-zOS">
+                                            <rect key="frame" x="53" y="254" width="159.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-LH-gOX">
+                                            <rect key="frame" x="343" y="236.5" width="35" height="34"/>
+                                            <color key="tintColor" systemColor="systemPinkColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AtH-He-MdL" firstAttribute="leading" secondItem="Blc-cR-s7f" secondAttribute="leading" constant="43" id="45k-zd-hIL"/>
+                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" constant="-10" id="5bt-OK-Rs4"/>
+                                        <constraint firstItem="0zf-pM-Zb3" firstAttribute="leading" secondItem="AtH-He-MdL" secondAttribute="leading" constant="10" id="DFo-Bs-dhz"/>
+                                        <constraint firstItem="CuK-zN-69h" firstAttribute="top" secondItem="AtH-He-MdL" secondAttribute="top" id="JKh-fo-qYZ"/>
+                                        <constraint firstItem="AtH-He-MdL" firstAttribute="top" secondItem="BWn-La-Mcd" secondAttribute="bottom" constant="10" id="PIW-vy-Exh"/>
+                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="bottom" secondItem="AtH-He-MdL" secondAttribute="bottom" constant="-5" id="USJ-v8-d3R"/>
+                                        <constraint firstItem="BWn-La-Mcd" firstAttribute="top" secondItem="Blc-cR-s7f" secondAttribute="top" constant="30" id="ZGO-EC-Zjh"/>
+                                        <constraint firstItem="BWn-La-Mcd" firstAttribute="leading" secondItem="Blc-cR-s7f" secondAttribute="leading" constant="20" id="ljD-63-9o6"/>
+                                        <constraint firstItem="gwm-KQ-zOS" firstAttribute="top" secondItem="0zf-pM-Zb3" secondAttribute="bottom" id="oXs-dU-3F8"/>
+                                        <constraint firstItem="CuK-zN-69h" firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" id="pLb-jJ-bQ9"/>
+                                        <constraint firstItem="CuK-zN-69h" firstAttribute="leading" secondItem="AtH-He-MdL" secondAttribute="leading" id="qRW-ns-iHx"/>
+                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gwm-KQ-zOS" secondAttribute="trailing" constant="15" id="wY5-Mu-FCd"/>
+                                        <constraint firstItem="gwm-KQ-zOS" firstAttribute="bottom" secondItem="AtH-He-MdL" secondAttribute="bottom" constant="-5" id="xMq-SN-Rgt"/>
+                                        <constraint firstItem="CuK-zN-69h" firstAttribute="bottom" secondItem="AtH-He-MdL" secondAttribute="bottom" id="zEo-z7-SzZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" constant="26" id="zXk-Z1-f7d"/>
+                                        <constraint firstItem="gwm-KQ-zOS" firstAttribute="leading" secondItem="AtH-He-MdL" secondAttribute="leading" constant="10" id="zna-ha-1lx"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="descriptionLabel" destination="gwm-KQ-zOS" id="LXu-80-pQ7"/>
+                                        <outlet property="thumbnailImageView" destination="AtH-He-MdL" id="LdE-Fd-Eny"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="LFH-YS-lk9"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lYl-Ei-ALw"/>
@@ -97,8 +162,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
