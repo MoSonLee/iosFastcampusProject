@@ -38,17 +38,26 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ign-xF-ixb">
                                 <rect key="frame" x="18" y="692" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="mND-BP-7fP" eventType="editingDidBegin" id="l9y-0f-tO3"/>
+                                    <action selector="endDrag:" destination="mND-BP-7fP" eventType="editingDidEnd" id="GnW-oV-01N"/>
+                                    <action selector="seek:" destination="mND-BP-7fP" eventType="valueChanged" id="dMG-uc-lb8"/>
+                                </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vy-uG-mbG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vy-uG-mbG">
                                 <rect key="frame" x="179.5" y="767" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="iFF-p1-oUE"/>
                                     <constraint firstAttribute="width" constant="55" id="jZy-0z-Kgo"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="40"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="play.fill" catalog="system">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                                <connections>
+                                    <action selector="togglePlayButton:" destination="mND-BP-7fP" eventType="touchUpInside" id="dBV-re-T9w"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-DI-wl6">
                                 <rect key="frame" x="163" y="581" width="88" height="21"/>
@@ -102,6 +111,9 @@
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
