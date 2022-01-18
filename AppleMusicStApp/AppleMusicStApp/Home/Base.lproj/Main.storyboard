@@ -75,25 +75,13 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Blc-cR-s7f" customClass="TrackCollectionHeaderView" customModule="AppleMusicStApp" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollectionHeaderView" id="Blc-cR-s7f" customClass="TrackCollectionHeaderView" customModule="AppleMusicStApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Pick!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWn-La-Mcd">
                                             <rect key="frame" x="20" y="30" width="185" height="36"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-He-MdL">
-                                            <rect key="frame" x="43" y="76" width="345" height="200"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="RJb-ES-op0"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zf-pM-Zb3">
-                                            <rect key="frame" x="53" y="237" width="75" height="17"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -105,21 +93,33 @@
                                                 <action selector="cardTapped:" destination="Blc-cR-s7f" eventType="touchUpInside" id="ALg-uR-MRb"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-He-MdL">
+                                            <rect key="frame" x="43" y="76" width="345" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="RJb-ES-op0"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zf-pM-Zb3">
+                                            <rect key="frame" x="53" y="237" width="75" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY NOW Today's pick" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-KQ-zOS">
                                             <rect key="frame" x="53" y="254" width="159.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-LH-gOX">
-                                            <rect key="frame" x="343" y="236.5" width="35" height="34"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-LH-gOX">
+                                            <rect key="frame" x="338" y="236.5" width="35" height="34"/>
                                             <color key="tintColor" systemColor="systemPinkColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="AtH-He-MdL" firstAttribute="leading" secondItem="Blc-cR-s7f" secondAttribute="leading" constant="43" id="45k-zd-hIL"/>
-                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" constant="-10" id="5bt-OK-Rs4"/>
+                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" constant="-15" id="5bt-OK-Rs4"/>
                                         <constraint firstItem="0zf-pM-Zb3" firstAttribute="leading" secondItem="AtH-He-MdL" secondAttribute="leading" constant="10" id="DFo-Bs-dhz"/>
                                         <constraint firstItem="CuK-zN-69h" firstAttribute="top" secondItem="AtH-He-MdL" secondAttribute="top" id="JKh-fo-qYZ"/>
                                         <constraint firstItem="AtH-He-MdL" firstAttribute="top" secondItem="BWn-La-Mcd" secondAttribute="bottom" constant="10" id="PIW-vy-Exh"/>
@@ -129,7 +129,7 @@
                                         <constraint firstItem="gwm-KQ-zOS" firstAttribute="top" secondItem="0zf-pM-Zb3" secondAttribute="bottom" id="oXs-dU-3F8"/>
                                         <constraint firstItem="CuK-zN-69h" firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" id="pLb-jJ-bQ9"/>
                                         <constraint firstItem="CuK-zN-69h" firstAttribute="leading" secondItem="AtH-He-MdL" secondAttribute="leading" id="qRW-ns-iHx"/>
-                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gwm-KQ-zOS" secondAttribute="trailing" constant="15" id="wY5-Mu-FCd"/>
+                                        <constraint firstItem="g3b-LH-gOX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gwm-KQ-zOS" secondAttribute="trailing" constant="20" id="wY5-Mu-FCd"/>
                                         <constraint firstItem="gwm-KQ-zOS" firstAttribute="bottom" secondItem="AtH-He-MdL" secondAttribute="bottom" constant="-5" id="xMq-SN-Rgt"/>
                                         <constraint firstItem="CuK-zN-69h" firstAttribute="bottom" secondItem="AtH-He-MdL" secondAttribute="bottom" id="zEo-z7-SzZ"/>
                                         <constraint firstAttribute="trailing" secondItem="AtH-He-MdL" secondAttribute="trailing" constant="26" id="zXk-Z1-f7d"/>
