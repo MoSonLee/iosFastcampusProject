@@ -25,7 +25,7 @@ class TodoListViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: 키보드 디텍션
-        //sksk
+        
         
         // TODO: 데이터 불러오기(X)
         todoListViewModel.loadTasks()
