@@ -49,7 +49,10 @@
 ### issues
 
 [**이미지 크기 issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/1#issue-1101945578) </br>
-[**keyValue issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/3#issue-1103370996)
+[**keyValue issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/3#issue-1103370996) </br>
+[**AppleMusicStApp UI size issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/4#issue-1106168906) </br>
+[**Github commit 오류(Fork 어플 사용)**](https://github.com/MoSonLee/iosFastcampusProject/issues/5#issue-1113545516) </br>
+
 
 # :memo: Commit Convention
 
