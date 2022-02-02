@@ -11,11 +11,7 @@ import CoreMedia
 
 class HomeViewController: UIViewController {
     // TODO: 트랙관리 객체 추가
-    
     let trackManager: TrackManager = TrackManager()
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -92,7 +88,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 20 - card(width) - 20 - card(width) - 20
         // TODO: 셀사이즈 구하기
-        
         let itemSpacing: CGFloat = 20
         let margin: CGFloat = 20
         let width = (collectionView.bounds.width - itemSpacing - margin * 2)/2
