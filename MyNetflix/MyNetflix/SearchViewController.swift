@@ -7,17 +7,63 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultCollectionView: UICollectionView!
     
+    var movies: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+extension SearchViewController: UICollectionViewDataSource{
     
+    // 몇개가 넘어오나.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    // 어떻게 표현할건가.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCell", for: indexPath) as? ResultCell else{
+            return UICollectionViewCell()
+        }
+        let movie = movies[indexPath.item]
+        let url = URL(string: movie.thumbnailPath)!
+
+        // imagepath(string타입) -> image
+        // 외부 코드 가져다 쓰기
+        // SPM, Cocoa Pod, Carthage
+        cell.movieThumbnail.kf.setImage(with: url)
+        
+        cell.backgroundColor = .red
+        return cell
+    }
+}
+extension SearchViewController: UICollectionViewDelegate{
+    
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let margin: CGFloat = 8
+        let itemSpacing: CGFloat = 10
+        
+        let width = (collectionView.bounds.width - margin * 2 - itemSpacing * 2) / 3
+        let height = width * 10/7
+        return CGSize(width: width, height: height)
+    }
+}
+
+class ResultCell: UICollectionViewCell {
+    @IBOutlet weak var movieThumbnail: UIImageView!
 }
 
 extension SearchViewController: UISearchBarDelegate{
@@ -29,9 +75,7 @@ extension SearchViewController: UISearchBarDelegate{
         
         
         // 검색 시작
-        
         // 키보드가 올라와 있을 때, 내려가게 처리
-        
         // 검색어가 있는지 확인
         guard let searchTerm = searchBar.text,
               searchTerm.isEmpty == false else {return}
@@ -43,10 +87,14 @@ extension SearchViewController: UISearchBarDelegate{
         // - 결과를 받아와서, CollectionView로 표현해주자
         
         SearchAPI.search(searchTerm) { movies in
+            // collectionView로 표현하기.
             print("--> 몇개 넘어왔어?? \(movies.count), 첫번째 영화 제목: \(movies.first?.title)")
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.resultCollectionView.reloadData()
+            }
         }
         print("--> 검색어: \(searchTerm)")
-        
     }
 }
 
