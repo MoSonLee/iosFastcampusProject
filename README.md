@@ -41,7 +41,13 @@
  ➡️ 현상금 사진을 누르면 애니메이션 효과 적용.</br>
  
 **📲 실행 화면 </br>**
-![Simulator Screen Recording - iPhone 11 - 2022-01-16 at 19 35 28](https://user-images.githubusercontent.com/77050826/149656549-19ff9af7-b94e-4d57-bee6-733d55cf2a5f.gif)
+![Simulator Screen Recording - iPhone 11 - 2022-01-16 at 19 35 28](https://user-images.githubusercontent.com/77050826/149656549-19ff9af7-b94e-4d57-bee6-733d55cf2a5f.gif)</br>
+
+ ### AppleStmusicApp</br>
+ 
+ **📲 실행 화면 </br>**
+ ![Simulator Screen Recording - iPhone 11 - 2022-02-15 at 04 36 03](https://user-images.githubusercontent.com/77050826/153933929-fc9c4a20-0b0b-46d9-a9fc-7601975eca35.gif)</br>
+
 
 
 </br>
