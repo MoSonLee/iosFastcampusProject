@@ -52,6 +52,8 @@
 [**keyValue issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/3#issue-1103370996) </br>
 [**AppleMusicStApp UI size issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/4#issue-1106168906) </br>
 [**Github commit 오류(Fork 어플 사용)**](https://github.com/MoSonLee/iosFastcampusProject/issues/5#issue-1113545516) </br>
+[**Todo list 앱 키보드 안 나옴 + 버튼 UI 크기 설정 오류**](https://github.com/MoSonLee/iosFastcampusProject/issues/6#issue-1117374398) </br>
+
 
 
 # :memo: Commit Convention
