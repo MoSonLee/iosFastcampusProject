@@ -6,5 +6,5 @@ target 'Firebase101' do
   use_frameworks!
 
   # Pods for Firebase101
-
+pod 'Firebase'
 end
