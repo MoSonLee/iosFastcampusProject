@@ -17,8 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Data!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fly-i9-dND">
-                                <rect key="frame" x="165.5" y="115" width="83" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="137" y="115" width="140.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Customers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TG-jd-6Mc">
+                                <rect key="frame" x="107.5" y="187" width="199" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,12 +32,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2TG-jd-6Mc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bbh-79-ByU"/>
                             <constraint firstItem="fly-i9-dND" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="GTp-6q-pv6"/>
+                            <constraint firstItem="2TG-jd-6Mc" firstAttribute="top" secondItem="fly-i9-dND" secondAttribute="bottom" constant="36" id="Pef-Jq-m3x"/>
                             <constraint firstItem="fly-i9-dND" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bOm-mK-4ql"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="fly-i9-dND" id="Q4i-tK-Zb1"/>
+                        <outlet property="numOfCustomers" destination="2TG-jd-6Mc" id="3Xe-4i-xcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
