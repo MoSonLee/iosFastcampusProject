@@ -15,14 +15,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateLabel()
         
-        db.child("firstData").observeSingleEvent(of: .value){ snapshot in
-            print("--> \(snapshot)")
-            
-            let value = snapshot.value as? String ?? ""
-            
-            self.dataLabel.text = value
+        func updateLabel(){
+            db.child("firstData").observeSingleEvent(of: .value){ snapshot in
+                print("--> \(snapshot)")
+                
+                let value = snapshot.value as? String ?? ""
+                DispatchQueue.main.async {
+                    self.dataLabel.text = value
+                }
+            }
         }
     }
 }
