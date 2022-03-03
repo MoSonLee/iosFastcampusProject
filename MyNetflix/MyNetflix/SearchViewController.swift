@@ -13,6 +13,7 @@ import Firebase
 
 class SearchViewController: UIViewController {
     
+    let db = Database.database().reference().child("searchHistory")
     
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -112,6 +113,8 @@ extension SearchViewController: UISearchBarDelegate{
             DispatchQueue.main.async {
                 self.movies = movies
                 self.resultCollectionView.reloadData()
+                let timestamp: Double = Date().timeIntervalSince1970.rounded()
+                self.db.childByAutoId().setValue(["term": searchTerm, "timestamp": timestamp])
             }
         }
         print("--> 검색어: \(searchTerm)")
