@@ -248,16 +248,71 @@
             <objects>
                 <viewController id="Blf-Or-i5j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ce7-Bh-AkS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpx-Im-CzX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="1473"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWl-ZP-XVn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIB-UH-KwP">
+                                                <rect key="frame" x="16" y="20" width="382" height="300"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="YJA-oN-rr8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-ax-6nq">
+                                                <rect key="frame" x="16" y="328" width="382" height="600"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKV-c6-PI1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="600"/>
+                                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="j8f-IC-b2b"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="JIB-UH-KwP" firstAttribute="leading" secondItem="CWl-ZP-XVn" secondAttribute="leading" constant="16" id="0wS-ze-GRh"/>
+                                            <constraint firstItem="JIB-UH-KwP" firstAttribute="top" secondItem="CWl-ZP-XVn" secondAttribute="top" constant="20" id="5Rs-b6-ur6"/>
+                                            <constraint firstAttribute="trailing" secondItem="JIB-UH-KwP" secondAttribute="trailing" constant="16" id="Bs8-I3-hdd"/>
+                                            <constraint firstItem="YPv-ax-6nq" firstAttribute="top" secondItem="JIB-UH-KwP" secondAttribute="bottom" constant="8" id="FBl-6e-cQC"/>
+                                            <constraint firstAttribute="trailing" secondItem="YPv-ax-6nq" secondAttribute="trailing" constant="16" id="O9H-OD-wD6"/>
+                                            <constraint firstItem="YPv-ax-6nq" firstAttribute="leading" secondItem="CWl-ZP-XVn" secondAttribute="leading" constant="16" id="htl-ku-rOL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CWl-ZP-XVn" firstAttribute="leading" secondItem="zpx-Im-CzX" secondAttribute="leading" id="8KC-mp-9kc"/>
+                                    <constraint firstItem="CWl-ZP-XVn" firstAttribute="top" secondItem="zpx-Im-CzX" secondAttribute="top" id="L6F-ao-TCL"/>
+                                    <constraint firstAttribute="trailing" secondItem="CWl-ZP-XVn" secondAttribute="trailing" id="SGX-2W-J2K"/>
+                                    <constraint firstAttribute="bottom" secondItem="CWl-ZP-XVn" secondAttribute="bottom" id="kQT-4c-7Ht"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cEW-rw-DWC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zpx-Im-CzX" firstAttribute="top" secondItem="cEW-rw-DWC" secondAttribute="top" id="Bws-Cj-UAL"/>
+                            <constraint firstItem="CWl-ZP-XVn" firstAttribute="height" secondItem="ce7-Bh-AkS" secondAttribute="height" priority="250" id="dKl-LW-Dy2"/>
+                            <constraint firstItem="zpx-Im-CzX" firstAttribute="leading" secondItem="cEW-rw-DWC" secondAttribute="leading" id="dMd-60-PWi"/>
+                            <constraint firstItem="CWl-ZP-XVn" firstAttribute="width" secondItem="ce7-Bh-AkS" secondAttribute="width" id="koJ-80-VCj"/>
+                            <constraint firstItem="cEW-rw-DWC" firstAttribute="bottom" secondItem="zpx-Im-CzX" secondAttribute="bottom" id="qeE-um-5RZ"/>
+                            <constraint firstItem="cEW-rw-DWC" firstAttribute="trailing" secondItem="zpx-Im-CzX" secondAttribute="trailing" id="rPO-KY-vRL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="공개예정" image="play.rectangle.fill" catalog="system" id="pxU-OE-cdZ"/>
+                    <size key="freeformSize" width="414" height="1600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J18-X4-5SI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="990"/>
+            <point key="canvasLocation" x="3033" y="1225"/>
         </scene>
         <!--더보기-->
         <scene sceneID="Lca-zO-Qyt">
@@ -526,6 +581,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
