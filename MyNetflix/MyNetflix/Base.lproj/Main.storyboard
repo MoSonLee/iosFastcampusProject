@@ -348,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zo8-ig-C2K">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zo8-ig-C2K">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -376,6 +376,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0DL-kq-S35" id="OU0-nY-k0r"/>
+                                    <outlet property="delegate" destination="0DL-kq-S35" id="nIv-wH-5ml"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OYX-Ro-fRu"/>
@@ -671,7 +675,6 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ahb-Nj-NJR"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yW2-Ef-fuT" secondAttribute="bottom" constant="6" id="17i-rf-9ah"/>
                             <constraint firstAttribute="trailing" secondItem="yW2-Ef-fuT" secondAttribute="trailing" id="QN6-2V-2Rb"/>
@@ -744,7 +747,6 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gyI-TE-fNQ"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="pak-4Q-Kj9" firstAttribute="leading" secondItem="ndn-ds-9M0" secondAttribute="leading" constant="8" id="28b-rA-rmJ"/>
                             <constraint firstAttribute="bottom" secondItem="Pc8-GK-oax" secondAttribute="bottom" constant="6" id="LLs-bh-eUH"/>
@@ -777,12 +779,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
