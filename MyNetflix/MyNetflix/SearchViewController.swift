@@ -9,8 +9,11 @@
 import UIKit
 import Kingfisher
 import AVFoundation
+import Firebase
 
 class SearchViewController: UIViewController {
+    
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultCollectionView: UICollectionView!
