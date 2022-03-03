@@ -47,14 +47,15 @@ class HomeViewController: UIViewController {
         
         SearchAPI.search("interstella") { movies in
             guard let interstella = movies.first else { return }
+            
             DispatchQueue.main.async {
                 let url = URL(string: interstella.previewURL)!
                 let item = AVPlayerItem(url: url)
-                
                 let sb = UIStoryboard(name: "Player", bundle: nil)
                 let vc = sb.instantiateViewController(identifier: "PlayerViewController") as! PlayerViewController
-                vc.modalPresentationStyle = .fullScreen
                 vc.player.replaceCurrentItem(with: item)
+                
+                vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: false, completion: nil)
             
             }
