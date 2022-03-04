@@ -52,8 +52,11 @@
  
  **📲 실행 화면 </br>**
  ![Simulator Screen Recording - iPhone 11 - 2022-02-15 at 04 36 03](https://user-images.githubusercontent.com/77050826/153933929-fc9c4a20-0b0b-46d9-a9fc-7601975eca35.gif)</br>
-
- ### TodoListApp
+ 
+ ### TodoListApp</br>
+   ➡️ static table view를 사용해여 설정 페이지를 구현(설정처럼 고정되어 있으면 static 아닐시 dynamic)</br>
+   ➡️ today와 upcoming section을 나눠준다.</br>
+   ➡️ table view의 section과 row로 나누어서 구현했다.</br>
 
 **📲 실행 화면 </br>**
 ![Simulator Screen Recording - iPhone 11 - 2022-02-15 at 06 51 37](https://user-images.githubusercontent.com/77050826/153952721-bcdebb81-bd6b-4e08-ab03-80ef1755d395.gif)</br>
