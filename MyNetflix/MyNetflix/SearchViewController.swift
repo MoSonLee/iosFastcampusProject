@@ -124,7 +124,6 @@ extension SearchViewController: UISearchBarDelegate{
 class SearchAPI{
     static func search(_ term: String, completion: @escaping ([Movie]) -> Void){
         let session = URLSession(configuration: .default)
-        
         var urlComponents = URLComponents(string: "https://itunes.apple.com/search?")!
         let mediaQuery = URLQueryItem(name: "media", value: "movie")
         let entityQuery = URLQueryItem(name: "entity", value: "movie")
@@ -150,6 +149,7 @@ class SearchAPI{
             }
             // data -> [Movie]
             let movies = SearchAPI.parseMovies(resultData)
+            
             completion(movies)
         }
         dataTask.resume()

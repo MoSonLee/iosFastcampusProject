@@ -43,6 +43,10 @@
                                                 <state key="normal" title="재생" image="play.fill" catalog="system">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="재생" imagePadding="10">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4XF-hn-UW2"/>
                                                 </connections>
