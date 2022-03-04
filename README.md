@@ -45,6 +45,10 @@
 ![Simulator Screen Recording - iPhone 11 - 2022-01-16 at 19 35 28](https://user-images.githubusercontent.com/77050826/149656549-19ff9af7-b94e-4d57-bee6-733d55cf2a5f.gif)</br>
 
  ### AppleStmusicApp</br>
+   ➡️ collection view와 collction header view를 사용하여 헤더뷰에 랜덤으로 음악을 넣어준다.</br>
+   ➡️ AVFoundation에서 음악, 타이틀, 앨범 name만 가져와서 구현했다.</br>
+   ➡️ Simpleplayer class를 구현할 때 singleTone 패턴을 사용했다.</br>
+   ➡️ 다크모드로도 실행이 가능하게 코드를 구현했다.</br>
  
  **📲 실행 화면 </br>**
  ![Simulator Screen Recording - iPhone 11 - 2022-02-15 at 04 36 03](https://user-images.githubusercontent.com/77050826/153933929-fc9c4a20-0b0b-46d9-a9fc-7601975eca35.gif)</br>
