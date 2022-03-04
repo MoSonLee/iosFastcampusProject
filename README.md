@@ -57,6 +57,7 @@
 ### myNetflix
 
 **📲 실행 화면 </br>**
+![Simulator Screen Recording - iPhone 11 - 2022-03-04 at 18 47 42 복사본 2](https://user-images.githubusercontent.com/77050826/156740374-88d096ce-3623-495f-a0ed-1d87c556e033.gif)
 
 
 </br>
