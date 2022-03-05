@@ -13,7 +13,20 @@ import Photos
 class CameraViewController: UIViewController {
     // TODO: 초기 설정 1
     
-
+//    - AVCaptureSession
+//    - AVCaptureDevice
+//    - AVCapturePhotoOutput
+//    - Queue
+//    - AVCaptureDevice DiscoverySession
+    
+    let captureSession = AVCaptureSession()
+    var videoDeviceInput: AVCaptureDeviceInput!
+    let photoOutput = AVCapturePhotoOutput()
+    
+    let sessionQueue = DispatchQueue(label: "session Queue")
+    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
+    
+    
     @IBOutlet weak var photoLibraryButton: UIButton!
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var captureButton: UIButton!
@@ -28,11 +41,27 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         // TODO: 초기 설정 2
         
+        previewView.session = captureSession
+        sessionQueue.async {
+            self.setupSession()
+            self.startSession()
+        }
+        setupUI()
         
     }
     
     func setupUI() {
-
+        photoLibraryButton.layer.cornerRadius = 10
+        photoLibraryButton.layer.masksToBounds = true
+        photoLibraryButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        photoLibraryButton.layer.borderWidth = 1
+        
+        captureButton.layer.cornerRadius = captureButton.bounds.height/2
+        captureButton.layer.masksToBounds = true
+        
+        blurBGView.layer.cornerRadius = captureButton.bounds.height/2
+        blurBGView.layer.masksToBounds = true
+        
     }
     
     
@@ -52,8 +81,8 @@ class CameraViewController: UIViewController {
     
     @IBAction func capturePhoto(_ sender: UIButton) {
         // TODO: photoOutput의 capturePhoto 메소드
-
-
+        
+        
     }
     
     
@@ -73,7 +102,7 @@ extension CameraViewController {
         // - Add Photo Output
         // - commitConfiguration
         
-
+        
         
         
     }
@@ -82,7 +111,7 @@ extension CameraViewController {
     
     func startSession() {
         // TODO: session Start
-
+        
     }
     
     func stopSession() {
