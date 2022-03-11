@@ -24,7 +24,7 @@ class CameraViewController: UIViewController {
     let photoOutput = AVCapturePhotoOutput()
     
     let sessionQueue = DispatchQueue(label: "session Queue")
-    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .back)
+    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
     
     
     @IBOutlet weak var photoLibraryButton: UIButton!
@@ -67,14 +67,69 @@ class CameraViewController: UIViewController {
     
     @IBAction func switchCamera(sender: Any) {
         // TODO: 카메라는 1개 이상이어야함
-        
+        guard videoDeviceDiscoverySession.devices.count > 1 else {
+            return
+        }
         
         // TODO: 반대 카메라 찾아서 재설정
+        // - 반대 카메라 찾기
+        // - 새로운 디바이스를 가지고 세션을 업데이트
+        // - 카메라 토글버튼 업데이트
         
+        sessionQueue.async {
+            
+            let currentVideoDevice = self.videoDeviceInput.device
+            let currentPosition = currentVideoDevice.position
+            let isFront = currentPosition == .front
+            let preferredPosition: AVCaptureDevice.Position = isFront ? .back : .front
+            
+            let devices = self.videoDeviceDiscoverySession.devices
+            var newVideoDevice: AVCaptureDevice?
+            
+            newVideoDevice = devices.first(where: { device in
+                return preferredPosition == device.position
+            })
+            
+            // update capture session
+            
+            if let newDevice = newVideoDevice {
+                
+                do {
+                    let videoDeviceInput = try AVCaptureDeviceInput(device: newDevice)
+                    self.captureSession.beginConfiguration()
+                    self.captureSession.removeInput(self.videoDeviceInput)
+                    
+                    // add new device input
+                    if self.captureSession.canAddInput(videoDeviceInput){
+                        self.captureSession.addInput(videoDeviceInput)
+                        self.videoDeviceInput = videoDeviceInput
+                    } else {
+                        self.captureSession.addInput(self.videoDeviceInput)
+                    }
+                    self.captureSession.commitConfiguration()
+                    
+                    DispatchQueue.main.async {
+                        self.updateSwitchCameraIcon(position: preferredPosition)
+                    }
+                } catch let error {
+                    print("error occured while creating device input: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     func updateSwitchCameraIcon(position: AVCaptureDevice.Position) {
         // TODO: Update ICON
+        switch position {
+        case .front:
+            let image = #imageLiteral(resourceName: "ic_camera_front")
+            switchButton.setImage(image, for: .normal)
+        case .back:
+            let image = #imageLiteral(resourceName: "ic_camera_rear")
+            switchButton.setImage(image, for: .normal)
+        default:
+            break
+        }
         
         
     }
@@ -116,9 +171,9 @@ extension CameraViewController {
         do {
             
             let videoDeviceInput = try AVCaptureDeviceInput(device: camera)
-            
             if captureSession.canAddInput(videoDeviceInput){
                 captureSession.addInput(videoDeviceInput)
+                self.videoDeviceInput = videoDeviceInput
             } else {
                 captureSession.commitConfiguration()
                 return
@@ -138,7 +193,7 @@ extension CameraViewController {
             captureSession.commitConfiguration()
             return
         }
-       
+        
         captureSession.commitConfiguration()
     }
     
@@ -155,7 +210,7 @@ extension CameraViewController {
         // TODO: session Stop
         sessionQueue.async {
             if self.captureSession.isRunning{
-            self.captureSession.stopRunning()
+                self.captureSession.stopRunning()
             }
         }
     }
