@@ -13,18 +13,18 @@ import Photos
 class CameraViewController: UIViewController {
     // TODO: 초기 설정 1
     
-//    - AVCaptureSession
-//    - AVCaptureDevice
-//    - AVCapturePhotoOutput
-//    - Queue
-//    - AVCaptureDevice DiscoverySession
+    //    - AVCaptureSession
+    //    - AVCaptureDevice
+    //    - AVCapturePhotoOutput
+    //    - Queue
+    //    - AVCaptureDevice DiscoverySession
     
     let captureSession = AVCaptureSession()
     var videoDeviceInput: AVCaptureDeviceInput!
     let photoOutput = AVCapturePhotoOutput()
     
     let sessionQueue = DispatchQueue(label: "session Queue")
-    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
+    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .back)
     
     
     @IBOutlet weak var photoLibraryButton: UIButton!
@@ -102,21 +102,62 @@ extension CameraViewController {
         // - Add Photo Output
         // - commitConfiguration
         
+        captureSession.sessionPreset = .photo
+        captureSession.beginConfiguration()
+        // 사이에 구성하는 코드
+        
+        // Add video Input
         
         
+        guard let camera = videoDeviceDiscoverySession.devices.first else{
+            captureSession.commitConfiguration()
+            return
+        }
+        do {
+            
+            let videoDeviceInput = try AVCaptureDeviceInput(device: camera)
+            
+            if captureSession.canAddInput(videoDeviceInput){
+                captureSession.addInput(videoDeviceInput)
+            } else {
+                captureSession.commitConfiguration()
+                return
+            }
+            
+        } catch let error {
+            captureSession.commitConfiguration()
+            return
+            
+        }
+        // Add Photo Output
+        photoOutput.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
         
+        if captureSession.canAddOutput(photoOutput){
+            captureSession.addOutput(photoOutput)
+        } else {
+            captureSession.commitConfiguration()
+            return
+        }
+       
+        captureSession.commitConfiguration()
     }
-    
-    
     
     func startSession() {
         // TODO: session Start
-        
+        sessionQueue.async {
+            if !self.captureSession.isRunning{
+                self.captureSession.startRunning()
+            }
+        }
     }
     
     func stopSession() {
         // TODO: session Stop
-        
+        sessionQueue.async {
+            if self.captureSession.isRunning{
+            self.captureSession.stopRunning()
+            }
+        }
     }
 }
 
