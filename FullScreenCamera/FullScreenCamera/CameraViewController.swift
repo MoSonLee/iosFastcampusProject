@@ -47,7 +47,6 @@ class CameraViewController: UIViewController {
             self.startSession()
         }
         setupUI()
-        
     }
     
     func setupUI() {
@@ -63,8 +62,6 @@ class CameraViewController: UIViewController {
         blurBGView.layer.masksToBounds = true
         
     }
-    
-    
     @IBAction func switchCamera(sender: Any) {
         // TODO: 카메라는 1개 이상이어야함
         guard videoDeviceDiscoverySession.devices.count > 1 else {
@@ -130,8 +127,6 @@ class CameraViewController: UIViewController {
         default:
             break
         }
-        
-        
     }
     
     @IBAction func capturePhoto(_ sender: UIButton) {
@@ -155,9 +150,10 @@ class CameraViewController: UIViewController {
         PHPhotoLibrary.requestAuthorization { status in
             if status == .authorized {
                 // 저장
-                PHPhotoLibrary.shared().performChanges({PHAssetChangeRequest.creationRequestForAsset(from: image)}) { (success, error)  in
-                print(" --> 이미지 저장 완료 했나? \(success)")
-                }
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAsset(from: image)}) { (success, error)  in
+                        print(" --> 이미지 저장 완료 했나? \(success)")
+                    }
             } else {
                 // 다시 요청
                 print("--> 권한을 받지 못함 ")
@@ -184,6 +180,8 @@ extension CameraViewController {
         // Add video Input
         
         
+        
+        
         guard let camera = videoDeviceDiscoverySession.devices.first else{
             captureSession.commitConfiguration()
             return
@@ -199,7 +197,7 @@ extension CameraViewController {
                 return
             }
             
-        } catch let error {
+        } catch {
             captureSession.commitConfiguration()
             return
             
@@ -219,8 +217,8 @@ extension CameraViewController {
     
     func startSession() {
         // TODO: session Start
-        sessionQueue.async {
-            if !self.captureSession.isRunning{
+        if !captureSession.isRunning {
+            sessionQueue.async {
                 self.captureSession.startRunning()
             }
         }
@@ -228,20 +226,19 @@ extension CameraViewController {
     
     func stopSession() {
         // TODO: session Stop
-        sessionQueue.async {
-            if self.captureSession.isRunning{
+        if captureSession.isRunning {
+            sessionQueue.async {
                 self.captureSession.stopRunning()
             }
         }
     }
 }
-
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         // TODO: capturePhoto delegate method 구현
         
         guard error == nil else { return }
-        guard let imageData = photo.fileDataRepresentation() else{ return }
+        guard let imageData = photo.fileDataRepresentation() else { return }
         guard let image = UIImage(data: imageData) else { return }
         self.savePhotoLibrary(image: image)
         
