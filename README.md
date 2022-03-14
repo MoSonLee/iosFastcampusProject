@@ -76,12 +76,12 @@
 ![Simulator Screen Recording - iPhone 11 - 2022-03-04 at 18 47 42 복사본 2](https://user-images.githubusercontent.com/77050826/156740374-88d096ce-3623-495f-a0ed-1d87c556e033.gif)</br>
 
 ### 명언 생성기 앱</br>
-   - autoLayout의 기초를 다지기 위해 만든 간단한 어플</br>
-   - button이 눌렸을 때 명언과 이름이 랜덤하게 출력됨</br>
-   - autoLayout을 잡으면서 **Content Hugging, Compression Resistance**를 잊지 말자.</br>
-   - 뷰의 속성들에 따라 크기가 결정되는 뷰들이 있는데 이러한 뷰들은 다른 뷰들에 걸린 제약에 의해 본래의 사이즈보다 크거나 줄어들 수 있다.</br>
-   - 이 때 더 늘어나게 되는 것에 저항하는 Content hugging(priority가 높을수록 크기를 유지, 낮으면 크기가 늘어난다.)</br>
-   - 제약은 더 줄어드는 제약은 Compression Resistance(priority가 높으면 크기 유지, 낮으면 줄어든다.)
+   ➡️ autoLayout의 기초를 다지기 위해 만든 간단한 어플</br>
+   ➡️ button이 눌렸을 때 명언과 이름이 랜덤하게 출력됨</br>
+   ➡️ autoLayout을 잡으면서 **Content Hugging, Compression Resistance**를 잊지 말자.</br>
+   ➡️ 뷰의 속성들에 따라 크기가 결정되는 뷰들이 있는데 이러한 뷰들은 다른 뷰들에 걸린 제약에 의해 본래의 사이즈보다 크거나 줄어들 수 있다.</br>
+   ➡️ 더 늘어나게 되는 것에 저항하는 Content hugging(priority가 높을수록 크기를 유지, 낮으면 크기가 늘어난다.)</br>
+   ➡️ 제약은 더 줄어드는 제약은 Compression Resistance(priority가 높으면 크기 유지, 낮으면 줄어든다.)
 
 **📲 실행 화면 </br>**
 ![Simulator Screen Recording - iPhone 11 - 2022-03-14 at 21 27 34](https://user-images.githubusercontent.com/77050826/158173332-3aee17a9-057b-49b5-ab42-6d86a03f2f3b.gif)</br>
