@@ -85,6 +85,8 @@
 [**Github commit 오류(Fork 어플 사용)**](https://github.com/MoSonLee/iosFastcampusProject/issues/5#issue-1113545516) </br>
 [**Todo list 앱 키보드 안 나옴 + 버튼 UI 크기 설정 오류**](https://github.com/MoSonLee/iosFastcampusProject/issues/6#issue-1117374398) </br>
 [**오늘의 영화 재생 오류 issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/7#issue-1137745040) </br>
+[**Camera app 촬영 후 저장 issue**](https://github.com/MoSonLee/iosFastcampusProject/issues/8#issue-1167229960) </br>
+
 
 
 
